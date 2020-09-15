@@ -97,3 +97,14 @@ body {
 color: black;
 font-size: 30px;
 }
+
+#allDeaths {
+    color: red;
+    font-size: 30px;
+    }
+
+#allRecovered {
+    color: green;
+    font-size: 30px;
+}
+    
