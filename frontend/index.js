@@ -1,6 +1,6 @@
 
 const btn = () => document.getElementById('btn')
-
+const 
 
 document.addEventListener("DOMContentLoaded", function(){
  onCall()
@@ -14,8 +14,8 @@ btn().addEventListener("click", changeColor)
 
 
 function changeColor() {
-   btn().style.color = "pink" 
-btn().background = "white"
+   btn().style.color = "green" 
+
 }
 
 function myApi() {
@@ -35,4 +35,6 @@ function myApi() {
 });
 }
 
+fucntion allCases(){
 
+}
