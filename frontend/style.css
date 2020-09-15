@@ -1,0 +1,36 @@
+body {
+    background-color: white;
+}
+
+
+
+
+.div {
+    width: 500px;
+    height: 500px;
+    background: whitesmoke;
+    /* background: rgba(255,255,255,0.5); */
+    border: 3px solid black;
+    text-size-adjust: 15px;
+    margin: auto;
+    margin-top: 200px;
+    border-radius: 50%;
+    text-align: center;
+}
+
+#all-inputs{
+    margin-top: 100px;
+  
+}
+
+.input{
+    text-size-adjust: 15px !important;
+}
+
+#btn{
+    background-color: skyblue;
+    border: 3px solid skyblue;
+    border-radius: 50%;
+    width: 80px;
+    height: 60px;
+}
