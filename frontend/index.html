@@ -20,24 +20,24 @@ Compiled and minified CSS -->
   <script src="index.js"></script>
 
   <div id="first-circle">
+<div id="searchR"> 
 
-    <form id="Artist Name">
+</div>
+    <form id="find-cases">
+        <h4 id="search-text"> Search </h4> 
         <div id="all-inputs"> 
         <div class="input-field">
-          <label for="artist-name">Country Name:</label>
-          <input type="text" name="artist-name" class="input">
-       
+          <input type="text" id="countryName" name="country-name" class="input" placeholder="Country Name..">
         </div>
-        <br>
-        <div class="input-field">
-             <label for="song-name">Continent Name:</label>
-            <input type="text" name="song-name" class="input">
-           
-        </div>
-        <br>
-         
-        <br>
-        <input type="submit" value="Find Cases" id="btn">
+         <br>
+         <br>
+        <input type="submit" value="Find Cases" id="btn" onclick="submitForm()">
+        <script>
+            function submitForm() {
+            document.find-cases.submit();
+            document.getElementfind-cases.reset();
+            }
+        </script>
   </form>
 </div>
 

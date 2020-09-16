@@ -6,6 +6,8 @@ const totalC = () => document.getElementById('totalC')
 const h3 = () => document.getElementById('allCases')
 const h32 = () => document.getElementById('allDeaths')
 const h33 = () => document.getElementById('allRecovered')
+const form = () => document.getElementById("find-cases")
+const allInputs = () => document.getElementById("all-inputs")
 
 document.addEventListener("DOMContentLoaded", function(){
  onCall()
@@ -15,10 +17,12 @@ document.addEventListener("DOMContentLoaded", function(){
  blink2()
  myApi3()
  blink3()
+
 })
 
 function onCall() {
 btn().addEventListener("click", changeColor) 
+form().addEventListener("submit", submit)
 
 }
 
@@ -90,7 +94,7 @@ function myApi2() {
 }
 
 function allDeaths(value){
-    debugger;
+
 
     const val = value.response.reduce((acc, val) => {
         return val.deaths.total + acc
@@ -133,7 +137,7 @@ function allDeaths(value){
     
 
     function allRecovered(value){
-    debugger;
+console.log(value)
         const val = value.response.reduce((acc, val) => {
             return val.cases.recovered + acc
            }, 0)
@@ -154,6 +158,92 @@ function allDeaths(value){
             }, 1000);
         
         }
+
+        function myApi4(){
+            fetch("https://covid-193.p.rapidapi.com/statistics", {
+            "method": "GET",
+            "headers": {
+                "x-rapidapi-host": "covid-193.p.rapidapi.com",
+                "x-rapidapi-key": "9d691e50d2msh4aa205c2ff027f5p10f338jsn0e4e7c874dc3"
+            }
+        })
+        .then(res => res.json())
+        .then(value=> {
+            search(value);
+        })
+        .catch(err => {
+            console.log(err);
+        });
+        }
+
+      function submit(e) {
+      e.preventDefault()
+    myApi4()
+      }
+
+      function search(value) {
+        const searchValue = document.getElementById("countryName")
+        const country = value.response.find(val => val.country == searchValue.value)
+ 
+        
+const cName = country.country
+const cCont = country.continent
+const cCases = country.cases.total
+const cCasesR = country.cases.recovered
+const cCasesN = country.cases.new
+const cCasesA = country.cases.active
+const cNewD = country.deaths.new 
+const cTotalD = country.deaths.total
+const cPop = country.population 
+const cTest = country.tests.total
+
+debugger;
+const ser = document.getElementById("searchR")
+
+const h4 = document.createElement("p")
+const h41 = document.createElement("p")
+const h42 = document.createElement("p")
+const h42 = document.createElement("p")
+const h42 = document.createElement("p")
+const h42 = document.createElement("p")
+
+h4.innerText = country.country
+h41.innerText = country.continent
+h42.innerText = country.cases.total
+
+ser.appendChild(h4)
+ser.appendChild(h41)
+ser.appendChild(h42)
+
+resetInputs()
+
+resetForm()
+    }
+
+    function resetInputs() {
+        const searchValue = document.getElementById("countryName")
+        const ser = document.getElementById("searchR")
+        searchValue.value = ""
+
+  
+      }
+
+      function resetForm() {
+          if(form().value ){
+                form().value = ""    
+              }
+              debugger;
+      }
+
+
+  
+//       function formm() {
+//  const h2 = document.createElement("h2")
+//  h2.innerText = 
+// allInputs().appendChild(h2)
+//       }
+
+
 
 
 
