@@ -34,6 +34,7 @@ body {
     border-radius: 50%;
     text-align: center;
     margin-right: 470px;
+    overflow: auto;
 }
 
 #second-circle {
@@ -82,17 +83,18 @@ body {
 }
 
 #fifth-circle {
-    width: 300px;
-    height: 300px;
+    width: 650px;
+    height: 150px;
     background: whitesmoke;
     /* background: rgba(255,255,255,0.5); */
     border: 3px solid black;
     text-size-adjust: 15px;
-    margin: 570px ;
+    margin: 380px ;
     margin-top: 700px;
     border-radius: 50%;
     text-align: center;
-    margin-right: 470px;
+    margin-right: 100px;
+    overflow: scroll;
 
 }
 
@@ -126,15 +128,14 @@ font-size: 30px;
     font-size: 30px;
 }
 
-#search-text {
-    margin: 10px 0px;
-    margin-bottom: 200px;
-    margin-top: -150px;
-    font-size: 30px;
-}
     
 
 #searchR {
- margin-top: 150px;
+ margin-top: 200px;
+}
+
+
+#userInfo {
+    margin-top: 30px;
 }
 

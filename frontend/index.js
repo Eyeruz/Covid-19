@@ -44,27 +44,13 @@ function myApi() {
 	}
 })
 .then(res => res.json())
-.then(value=> {
-    allCases(value);
+.then(value => { 
+    Search.allCases(value)
+    ;
 })
 .catch(err => {
 	console.log(err);
 });
-}
-
-function allCases(value){
-    
-const val = value.response.reduce((acc, val) => {
-    return val.cases.total + acc
-   }, 0)
-   addCases(val)
-   
-}
-
-
-function addCases(value) {
-h3().innerText = value
-
 }
 
 function blink() {
@@ -88,27 +74,12 @@ function myApi2() {
 })
 .then(res => res.json())
 .then(value=> {
-    allDeaths(value);
+    Search.allDeaths(value);
 })
 .catch(err => {
 	console.log(err);
 });
 }
-
-function allDeaths(value){
-
-
-    const val = value.response.reduce((acc, val) => {
-        return val.deaths.total + acc
-       }, 0)
-       addDeaths(val)
-
-    }
-
-    function addDeaths(value){
-        h32().innerText = value
-
-    }
 
     function blink2() {
         const h3 = document.getElementById('allDeaths');
@@ -181,7 +152,7 @@ console.log(value)
       function submit(e) {
       e.preventDefault()
     myApi4()
-    
+    const countryName = document.getElementById('countryName')
       }
       
 
@@ -286,8 +257,6 @@ resetInputs()
         })
         .catch(errors => console.log(errors))
         .then(data => userInfo(data))
-     
-
       }
 
 
@@ -304,16 +273,4 @@ resetInputs()
       userInfo.appendChild(p)
 
 
-
       }
-
-        
-
-
-
-
-
-
-
-
-
