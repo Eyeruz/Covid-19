@@ -98,6 +98,22 @@ body {
 
 }
 
+#sixth-circle {
+    width: 650px;
+    height: 150px;
+    background: whitesmoke;
+    /* background: rgba(255,255,255,0.5); */
+    border: 3px solid black;
+    text-size-adjust: 15px;
+    margin: 380px ;
+    margin-top: -350px;
+    border-radius: 50%;
+    text-align: center;
+    margin-right: 260px;
+    overflow: scroll;
+
+}
+
 
 
 
@@ -131,7 +147,8 @@ font-size: 30px;
     
 
 #searchR {
- margin-top: 200px;
+ margin-top: 80px;
+ margin-bottom: 100px;
 }
 
 
