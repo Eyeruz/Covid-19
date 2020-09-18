@@ -131,7 +131,7 @@ class Search {
 
   
       
-          static userInfo(data) {
+          static userIn(data) {
       
             const userCountry = data.map(da => da.country)
            
@@ -145,28 +145,43 @@ class Search {
             }
 
 
+        static userInfo() {   
+              const baseUrl = 'http://localhost:3000'
+          
+              fetch(baseUrl + '/searches.json')
+              .then(resp => {
+                if (resp.status !== 200) {
+                  throw new Error(resp.statusText);
+                }
+                return resp.json()
+              })
+              .catch(errors => console.log(errors))
+              .then(data => Search.mostViews(data))
+             
+                  }
+          
+
+
             static mostViews(data) {
           
               console.log(data)
               const country = data.map(da => da.country )
-           
-  
-let mf = 1;
-let m = 0;
-let mostViewed;
-for (let i=0; i<country.length; i++)
+          let x = 1;
+          let y = 0;
+        let mostViewed;
+        for (let i=0; i<country.length; i++)
 {
         for (let j=i; j<country.length; j++)
         {
                 if (country[i] == country[j])
-                 m++;
-                if (mf<m)
+                 y++;
+                if (x<y)
                 {
-                  mf=m; 
+                  x=y; 
                   mostViewed = country[i];
                 }
         }
-        m=0;
+        y=0;
 }
 
                   const mostViews = document.getElementById("mostViews")
@@ -179,6 +194,9 @@ for (let i=0; i<country.length; i++)
 
                 
               } 
+
+
+              
         
        
 }

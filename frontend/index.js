@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function(){
  myApi3()
  blink3()
  getRails()
- userInfo()
+ Search.userInfo()
 
 })
 
@@ -160,20 +160,20 @@ function blink3() {
           return resp.json()
         })
         .catch(errors => console.log(errors))
-        .then(data => Search.userInfo(data))
+        .then(data => Search.userIn(data))
       }
 
-function userInfo() {   
-    const baseUrl = 'http://localhost:3000'
+// function userInfo() {   
+//     const baseUrl = 'http://localhost:3000'
 
-    fetch(baseUrl + '/searches.json')
-    .then(resp => {
-      if (resp.status !== 200) {
-        throw new Error(resp.statusText);
-      }
-      return resp.json()
-    })
-    .catch(errors => console.log(errors))
-    .then(data => Search.mostViews(data))
+//     fetch(baseUrl + '/searches.json')
+//     .then(resp => {
+//       if (resp.status !== 200) {
+//         throw new Error(resp.statusText);
+//       }
+//       return resp.json()
+//     })
+//     .catch(errors => console.log(errors))
+//     .then(data => Search.mostViews(data))
    
-        }
+//         }
