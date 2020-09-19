@@ -27,7 +27,7 @@ body {
     height: 500px;
     background: whitesmoke;
     /* background: rgba(255,255,255,0.5); */
-    border: 3px solid black;
+    border: 3px solid whitesmoke;
     text-size-adjust: 15px;
     margin: auto;
     margin-top: 200px;
@@ -35,6 +35,9 @@ body {
     text-align: center;
     margin-right: 470px;
     overflow: auto;
+    background-image: url(img/earthcov.jpg);
+    background-size: auto;
+    background-attachment: auto;
 }
 
 #second-circle {
@@ -42,13 +45,15 @@ body {
     height: 200px;
     background: whitesmoke;
     /* background: rgba(255,255,255,0.5); */
-    border: 3px solid black;
+    border: 3px solid whitesmoke;
     text-size-adjust: 15px;
     margin: -700px 280px;
     margin-top: ;
     margin-bottom: 200px;
     border-radius: 50%;
     text-align: center;
+    /* background-image: url(img/earthcov.jpg); */
+    background-size: auto;
 
 }
 
@@ -57,7 +62,7 @@ body {
     height: 200px;
     background: whitesmoke;
     /* background: rgba(255,255,255,0.5); */
-    border: 3px solid black;
+    border: 3px solid whitesmoke;
     text-size-adjust: 15px;
     margin: -410px 900px;
     margin-top: ;
@@ -72,7 +77,7 @@ body {
     height: 200px;
     background: whitesmoke;
     /* background: rgba(255,255,255,0.5); */
-    border: 3px solid black;
+    border: 3px solid whitesmoke;
     text-size-adjust: 15px;
     margin: -410px 600px;
     margin-top: -500px;
@@ -87,7 +92,7 @@ body {
     height: 150px;
     background: whitesmoke;
     /* background: rgba(255,255,255,0.5); */
-    border: 3px solid black;
+    border: 3px solid whitesmoke;
     text-size-adjust: 15px;
     margin: 380px ;
     margin-top: 700px;
@@ -103,7 +108,7 @@ body {
     height: 150px;
     background: whitesmoke;
     /* background: rgba(255,255,255,0.5); */
-    border: 3px solid black;
+    border: 3px solid whitesmoke;
     text-size-adjust: 15px;
     margin: 380px ;
     margin-top: -350px;
@@ -147,6 +152,7 @@ font-size: 30px;
     
 
 #searchR {
+   color: black;
  margin-top: 80px;
  margin-bottom: 100px;
 }

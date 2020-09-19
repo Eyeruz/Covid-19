@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function(){
  myApi3()
  blink3()
  getRails()
- Search.userInfo()
+Search.userInfo()
 
 })
 

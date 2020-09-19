@@ -16,6 +16,10 @@ class Search {
             this.date = date;
         }
 
+
+
+ 
+
    static allCases(value){
     
             const val = value.response.reduce((acc, val) => {
@@ -73,7 +77,7 @@ class Search {
         
         const ser = document.getElementById("searchR")
         
-        const p = document.createElement("p")
+        const p = document.createElement("h4")
         const p2 = document.createElement("p")
         const p3 = document.createElement("p")
         const p4 = document.createElement("p")
@@ -84,20 +88,31 @@ class Search {
         const p9 = document.createElement("p")
         const p10 = document.createElement("p")
         const p11 = document.createElement("p")
-        
+       
+       
         p.innerText = country.country
         p2.innerText = country.continent
-        p3.innerText = country.cases.total
-        p4.innerText = country.cases.recovered
-        p5.innerText = country.cases.new
-        p6.innerText = country.cases.active
-        p7.innerText = country.deaths.new 
-        p8.innerText = country.deaths.total
-        p9.innerText = country.population 
-        p10.innerText = country.tests.total
-        p11.innerText = country.day
+        p9.innerText = 'Population: '
+        p9.innerText += country.population 
+        p3.innerText = 'Total Cases: '
+        p3.innerText += country.cases.total
+        p4.innerText = 'Recovered: '
+        p4.innerText += country.cases.recovered
+        p5.innerText = 'New Cases: '
+        p5.innerText += country.cases.new
+        p6.innerText = 'Active Cases: '
+        p6.innerText += country.cases.active
+        p8.innerText = 'Total Deaths: '
+        p8.innerText += country.deaths.total
+        p7.innerText = 'New Deaths: '
+        p7.innerText += country.deaths.new 
+        p10.innerText = 'Total Tests: '
+        p10.innerText += country.tests.total
+        p11.innerText = 'Date:  '    
+        p11.innerText += country.day
         
-        
+
+     
         
         ser.appendChild(p)
         ser.appendChild(p2)
@@ -156,17 +171,24 @@ class Search {
                 return resp.json()
               })
               .catch(errors => console.log(errors))
-              .then(data => Search.mostViews(data))
+              .then(data => Search.mostVs(data))
+                }
+
+
+            
+                
+          
+
+
+            static mostVs(data) {
+              // console.log(data)
+              const country = data.map(da => da.country)
+              // new Search(data).showing()      
              
-                  }
           
-
-
-            static mostViews(data) {
-          
-              console.log(data)
-              const country = data.map(da => da.country )
-          let x = 1;
+            
+            
+                      let x = 1;
           let y = 0;
         let mostViewed;
         for (let i=0; i<country.length; i++)
@@ -191,12 +213,8 @@ class Search {
                   p.innerText = mostViewed
                  
                   mostViews.appendChild(p)
-
                 
               } 
+            }
 
-
-              
-        
-       
-}
+             
